@@ -56,7 +56,7 @@ Nivel: $level
 Banco: $bank
 Ciudad: $country $flag
 Tipo:$type
-Checked By @$username
+Revisado por @$username
 
 Hecho por @DKzippO***");
     }
