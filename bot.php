@@ -1,5 +1,5 @@
 <?php
-    date_default_timezone_set("Asia/kolkata");
+    date_default_timezone_set("America/La_Paz");
     //Data From Webhook
     $content = file_get_contents("php://input");
     $update = json_decode($content, true);
@@ -12,7 +12,7 @@
     $start_msg = $_ENV['START_MSG']; 
 
 if($message == "/start"){
-    send_message($chat_id,$message_id, "***Hey $firstname \nUse !bin xxxxxx to Check BIN \n$start_msg***");
+    send_message($chat_id,$message_id, "***Hola $firstname \nUtilice !Bin xxxxxx para comprobar un BIN \n$start_msg***");
 }
 
 //Bin Lookup
@@ -49,17 +49,19 @@ $flag = $data['data']['countryInfo']['emoji'];
  $result1 = $data['result'];
 
     if ($result1 == true) {
-    send_message($chat_id,$message_id, "***✅ Valid BIN
+    send_message($chat_id,$message_id, "***✅ BIN Válido
 Bin: $bin
-Brand: $brand
-Level: $level
-Bank: $bank
-Country: $country $flag
-Type:$type
-Checked By @$username ***");
+Marca: $brand
+Nivel: $level
+Banco: $bank
+Ciudad: $country $flag
+Tipo:$type
+Checked By @$username
+
+Hecho por @DKzippO***");
     }
 else {
-    send_message($chat_id,$message_id, "***Enter Valid BIN***");
+    send_message($chat_id,$message_id, "***Ingresa un BIN válido...***");
 }
 }
     function send_message($chat_id,$message_id, $message){
